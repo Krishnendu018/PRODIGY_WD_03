@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ee8a07, #4286f4);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  width: 320px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #1f1f1f;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cell {
+  background: #ffffff80;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  user-select: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+  background: #ffffffcc;
+  transform: scale(1.05);
+}
+
+/* Winning animation */
+.winning-cell {
+  background: #4CAF50 !important;
+  color: white !important;
+  animation: pop 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #4CAF50;
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #4CAF50;
+  }
+}
+
+.status {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #45a049;
+}
